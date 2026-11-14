@@ -1,83 +1,100 @@
-# PINAXA · The story before the simplified safety app
+# PINAXA Guardian — How I built it, broke it, rebuilt it, and changed direction
 
-**From a multi-module Android guardian to a focused personal safety product.**
+**A real development story by Geda Taye · Ethiopia · 2026**
 
-[← Return to the current PINAXA showcase](README.md) · [Meet the developer](https://github.com/geda21)
-
----
-
-## The original vision was much bigger
-
-Before the present PINAXA interface, I built and rebuilt an ambitious **Android guardian** combining a camera interface, voice interaction, expressive assistant faces, emergency workflows, logs, and experiments with on-device model integration.
-
-This was not just a diagram or prompt. I created Android projects and APKs, worked on CameraX/ML Kit integration, built Java components, debugged Gradle and manifest errors, and tested functioning interfaces on my phone. Some older project revisions and the original local model files are no longer available.
-
-**Why keep this history?** Because the final version does not show the technical experiments that led to it.
-
-## May 2026 · Real builds, real debugging
-
-In May, I was experimenting with camera and voice processing inside Android projects.
-
-- **May 19:** Build logs captured missing ML Kit classes in `CameraHelper.java`. I was troubleshooting the toolchain directly from the phone.
-- **May 25:** Prototype screens show an offline-labelled guardian, camera preview, bounding-box overlays and diagnostic event logs. A log explicitly labels a `weapon_knife_mock` trigger as simulated.
-- **May 26–27:** Animated blue-eye and purple-eye robot concepts with character states, listening, emergency activation and command history. A later build log shows a failed `downloadThreatModel` task.
-- **May 30:** Another guardian face with yellow attention eyes, ready/listening status and camera-related status text.
-
-The interface and behavior evolved repeatedly. The surviving screenshots document what the device displayed. They do not independently establish model accuracy, autonomous threat assessment, or reliable real-world emergency dispatch.
-
-## Eight visual experiments from the guardian years
-
-![Illustrated chart showing eight robot-face experiments based on original May 2026 PINAXA screenshots](https://raw.githubusercontent.com/geda21/geda21/main/assets/pinaxa-robot-face-evolution-illustrated.svg)
-
-This illustration compares eight separate visual states: **cyan scanner eyes, minimal purple face, friendly blue eyes, intense blue eyes, emergency activation, safety confirmation, yellow attention and yellow listening**. The **original Android screenshots are now uploaded** and displayed in the [developer's actual PINAXA evolution gallery](https://github.com/geda21/geda21#pinaxa-guardian--eight-actual-robot-versions). The graphic is an editorial redraw, not a fabricated application screenshot.
-
-## I wanted PINAXA to have a face
-
-I tried several visual identities: soft blue eyes, a minimal purple-square face, larger animated eyes, yellow attention states, and a character responding to emergency commands.
-
-These experiments were my way of exploring whether an assistant could communicate urgency, reassurance and state changes **without relying on dense technical text**.
-
-## The larger guardian architecture
-
-The original specification envisioned:
-
-| Module | Intended responsibilities |
-|---|---|
-| **Vision** | Camera processing, face/object overlays, potential-threat classification |
-| **Voice** | Command recognition, replies, safety check-ins |
-| **Decision logic** | Interpret signals and choose a response |
-| **Robot interface** | Visible moods, listening and warning states |
-| **Emergency workflows** | SOS controls, contacts, alerts, recording and events |
-| **Offline-first operation** | Local device behavior where supported |
-
-The preserved Java archives contain working Android components, plus test/simulation paths and incomplete model files. Earlier local models were removed from some later copies. My account of earlier successful on-device tests is part of the project history; the currently preserved archives alone cannot verify every original model or test outcome.
-
-## The important decision: reduce scope
-
-After repeatedly building the broader PINAXA Guardian concept, I changed its direction.
-
-The present **PINAXA v2.0** emphasizes deliberate emergency interaction: a large PANIC button, configurable shake/duress mode, emergency contacts, event history, safety timers and a password gate for evidence.
-
-<div align="center">
-
-<img src="assets/pinaxa-hero.png" width="100%" alt="Actual current PINAXA Android safety toolkit screens" />
-
-<img src="assets/pinaxa-screens-gallery.png" width="100%" alt="Actual PINAXA app screenshots: panic, timeline, contacts, evidence and settings" />
-
-</div>
-
-The redesign was not the absence of ambition. It was a choice to prioritize fewer, understandable features with a more realistic path to reliability.
-
-**I learned that solving a hard problem sometimes means removing features, not adding them.**
-
-## What this project proves
-
-It shows practical Android development: writing and debugging native code, integrating camera/voice components, prototyping stateful interfaces, facing build failures, maintaining successive versions and redesigning based on usability.
-
-It does **not** claim certified emergency performance, validated offline threat detection or guaranteed SMS/call delivery. Safety-critical systems require much more testing before anyone should rely on them.
+[← Current PINAXA safety app](README.md) · [My complete developer story](https://github.com/geda21) · [All original screenshots](https://github.com/geda21/geda21/tree/main/robot-evolution)
 
 ---
 
-**Geda Taye** · Self-taught Android & Web Developer · Ethiopia
+## The PINAXA you see today wasn't the first PINAXA.
 
-[Current PINAXA](README.md) · [NONOX on Google Play](https://play.google.com/store/apps/details?id=com.nonox.app) · [GitHub profile](https://github.com/geda21)
+When people open my current PINAXA showcase, they see a large red panic button, a contact list, an emergency history, an evidence screen and a timer.
+
+But that's not where the project started.
+
+I originally wanted something much bigger: **a guardian that could look through the phone camera, listen to commands, change its expression and respond during an emergency**. I tried to make that idea work directly on my Android phone, without a laptop or a separate team.
+
+I created multiple Java Android projects, compiled APKs and rebuilt the interface many times. Some of those versions are gone now. The screenshots and source archives I kept show how the idea changed.
+
+## May 19 — A build that would not compile
+
+In one screenshot from my mobile development environment, `CameraHelper.java` fails because the ML Kit face detection classes cannot be resolved. Other captured builds show missing Android resource styles, dependency problems and a model-download task that fails.
+
+I was working on camera and voice behavior. But before I could test the result, I first had to get the Android build environment to agree with my code.
+
+That is an important part of the story. I was learning Android by encountering its real constraints: dependencies, permissions, manifests, resource linking and the differences between code that looks valid and code that can actually compile.
+
+**A red error log was not the end of the project. It was usually the beginning of another attempt.**
+
+## May 25 — The first guardian on the screen
+
+I eventually had versions displaying a camera image, bounding-box overlays, status information, an SOS button and a scrolling log.
+
+<img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/09-camera-object-overlay.jpg" width="62%" alt="Original PINAXA camera and diagnostics screen from the developer's Android tests" />
+
+The interface shows labels, coordinates/boxes and a `weapon_knife_mock` alert entry. That entry is **explicitly a simulated trigger**. The screenshot is useful evidence of the camera interface and event-handling experiment, but it is not evidence of a validated real-world weapon detector.
+
+Another early version used a different layout, with the camera view above a guardian control and large emergency actions:
+
+<img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/10-early-sos-guardian.jpg" width="46%" alt="Early PINAX guardian dashboard with camera preview and emergency buttons" />
+
+I wasn't building one static design. I was rebuilding how the app should behave and what the user should see.
+
+## May 25–30 — Eight experiments with one question: how should the guardian react?
+
+I wanted PINAXA to feel like a presence, not a lifeless button.
+
+First I tried glowing cyan eyes. Then a small purple face. Then friendly blue eyes. Then a more intense expression. I designed screens for an activated emergency, a check-in where the app waited for the person to say they were safe, and finally yellow attention/listening states.
+
+These are **eight original Android screenshots** from my experiments, not new promotional illustrations:
+
+<table><tr><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/01-neon-cyan-eyes.jpg" width="180" alt="Glowing cyan scanner eyes"/><br/><sub>Glowing cyan scanner eyes</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/02-purple-minimal-robot.jpg" width="180" alt="Purple minimal expression"/><br/><sub>Purple minimal expression</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/03-blue-friendly-robot.jpg" width="180" alt="Friendly blue-eyed guardian"/><br/><sub>Friendly blue-eyed guardian</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/04-blue-alert-robot.jpg" width="180" alt="Sharper blue-eyed expression"/><br/><sub>Sharper blue-eyed expression</sub></td></tr>
+<tr><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/05-emergency-activated.jpg" width="180" alt="Emergency activated state"/><br/><sub>Emergency activated state</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/06-safety-checkin.jpg" width="180" alt="Safety check-in message"/><br/><sub>Safety check-in message</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/07-yellow-attention.jpg" width="180" alt="Yellow-eyed attention"/><br/><sub>Yellow-eyed attention</sub></td><td width="25%" align="center"><img src="https://raw.githubusercontent.com/geda21/geda21/main/robot-evolution/08-yellow-listening.jpg" width="180" alt="Listening and status"/><br/><sub>Listening and status</sub></td></tr></table>
+
+The difference between the faces mattered to me:
+
+- The **cyan and purple** versions explored whether a simple abstract face could communicate that the app was present.
+- The **blue-eyed** versions explored how a change in expression could convey a different state.
+- The **emergency** version displayed an activation message after a help command.
+- The **safety check-in** version displayed a request for the user to confirm they were okay.
+- The **yellow-eyed** versions displayed attention, listening and guardian status.
+
+These experiments were part of the same project journey, not separate products. The interaction screens show responses that appeared during testing; they don't establish reliability in every emergency.
+
+## The models and builds I no longer have
+
+I experimented with ML Kit, TensorFlow Lite files and offline-focused processing. I remember earlier local AI functionality working during development. Over time I deleted some model assets and several old versions disappeared from my phone.
+
+The surviving source archives still show Android activities, camera and voice integration attempts, services, security flows and stateful interfaces. They also include mock detection paths and incomplete model assets in some revisions.
+
+I'm keeping that distinction clear: **the surviving evidence documents substantial implementation and experimentation, but it cannot independently verify every model that once existed or every test I remember.**
+
+## Why I stopped adding features
+
+At a certain point, I had to ask a question that was more important than making the app intelligent:
+
+**Would someone under pressure be able to understand it and trust it to do what it says?**
+
+That changed the direction of PINAXA.
+
+Instead of making the guardian do everything, I concentrated on a smaller set of deliberate functions: a prominent panic control, configurable shake/duress mode, emergency contacts, safety timers, an event timeline and password-protected evidence access.
+
+[<img src="assets/pinaxa-hero.png" width="100%" alt="Real current PINAXA safety app screens"/>](README.md)
+
+The present PINAXA is the simpler product. The old version was an ambitious working development project with multiple experimental subsystems. I built and tested versions of that larger idea before deciding which parts belonged in the product I wanted to maintain.
+
+**Simplifying it wasn't forgetting the earlier work. It was learning from that work.**
+
+## What this experience taught me
+
+I learned to fight build errors rather than avoid them. I learned how complicated camera, voice and Android service behavior can become. I learned why a screen saying “SAFE” or “DANGER” is not enough to establish actual detection accuracy. And I learned that designing for emergencies requires more discipline than adding more AI features.
+
+I still have source ZIPs, screenshots and the later safety app to show for it.
+
+That's why I include the incomplete experiments in my portfolio. **They demonstrate the work behind the finished screens.**
+
+---
+
+**Safety and evidence note:** Early PINAXA alerts included simulated detections, and the surviving archives do not prove certified threat recognition or guaranteed SOS delivery. Safety functions need independent real-world validation; this page is an engineering-history account, not an emergency-service guarantee.
+
+[Current product](README.md) · [Developer portfolio](https://github.com/geda21) · [Original screenshots](https://github.com/geda21/geda21/tree/main/robot-evolution)
