@@ -25,6 +25,12 @@ In May, I was experimenting with camera and voice processing inside Android proj
 
 The interface and behavior evolved repeatedly. The surviving screenshots document what the device displayed. They do not independently establish model accuracy, autonomous threat assessment, or reliable real-world emergency dispatch.
 
+## Eight visual experiments from the guardian years
+
+![Illustrated chart showing eight robot-face experiments based on original May 2026 PINAXA screenshots](https://raw.githubusercontent.com/geda21/geda21/main/assets/pinaxa-robot-face-evolution-illustrated.svg)
+
+This illustration compares eight separate visual states: **cyan scanner eyes, minimal purple face, friendly blue eyes, intense blue eyes, emergency activation, safety confirmation, yellow attention and yellow listening**. The original screenshots are being preserved as an accompanying archival gallery. The graphic is an editorial redraw, not a fabricated application screenshot.
+
 ## I wanted PINAXA to have a face
 
 I tried several visual identities: soft blue eyes, a minimal purple-square face, larger animated eyes, yellow attention states, and a character responding to emergency commands.
