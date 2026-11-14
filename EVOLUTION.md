@@ -29,7 +29,7 @@ The interface and behavior evolved repeatedly. The surviving screenshots documen
 
 ![Illustrated chart showing eight robot-face experiments based on original May 2026 PINAXA screenshots](https://raw.githubusercontent.com/geda21/geda21/main/assets/pinaxa-robot-face-evolution-illustrated.svg)
 
-This illustration compares eight separate visual states: **cyan scanner eyes, minimal purple face, friendly blue eyes, intense blue eyes, emergency activation, safety confirmation, yellow attention and yellow listening**. The original screenshots are being preserved as an accompanying archival gallery. The graphic is an editorial redraw, not a fabricated application screenshot.
+This illustration compares eight separate visual states: **cyan scanner eyes, minimal purple face, friendly blue eyes, intense blue eyes, emergency activation, safety confirmation, yellow attention and yellow listening**. The **original Android screenshots are now uploaded** and displayed in the [developer's actual PINAXA evolution gallery](https://github.com/geda21/geda21#pinaxa-guardian--eight-actual-robot-versions). The graphic is an editorial redraw, not a fabricated application screenshot.
 
 ## I wanted PINAXA to have a face
 
