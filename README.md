@@ -16,6 +16,16 @@
 
 ---
 
+## From AI Guardian to PINAXA 2.0
+
+PINAXA started as an ambitious Android AI-guardian experiment with expressive robot faces, camera and voice interfaces, threat-simulation logs, and emergency-state interactions. After building and testing multiple versions, I made a deliberate product choice to simplify the system into a more focused personal safety toolkit.
+
+**[Explore the original PINAXA Guardian story, early experiments, build failures, and evolution →](EVOLUTION.md)**
+
+The historical work includes experimental interfaces and simulations; it should not be confused with independently validated safety-critical detection.
+
+---
+
 ## An emergency tool with one clear purpose
 
 In stressful situations, complex interfaces are difficult to use. **PINAXA** is a personal safety Android application organized around a prominent **PANIC** control, selectable emergency behaviors, a record of events and a protected evidence area.
